@@ -33,11 +33,9 @@
 
     <nav id="navMenu">
         <a href="#home">Home</a>
-        <a href="#power-tools">Power Tools</a>
-        <a href="#construction-tools">Construction</a>
-        <a href="#hand-tools">Hand Tools</a>
+        <a href="#construction-hand-tools">Construction & Hand Tools</a>
+        <a href="#cutting-grinding-discs">Cutting & Grinding Discs</a>
         <a href="#electrical">Electrical</a>
-        <a href="#plumbing">Plumbing</a>
         <a href="#contact">Contact</a>
     </nav>
 
@@ -65,6 +63,24 @@
             Quality tools and construction materials
             for professionals, contractors and builders.
         </p>
+
+        <div class="sales-contact">
+
+    <span class="sales-title">SALES EXECUTIVE</span>
+
+    <div class="sales-numbers">
+
+        <a href="tel:+971526380801">
+            ☎ +971 52 638 0801
+        </a>
+
+        <a href="tel:+971563578101">
+            ☎ +971 56 357 8101
+        </a>
+
+    </div>
+
+</div>
 
         <a href="#power-tools" class="hero-btn">
             EXPLORE PRODUCTS ↓
@@ -347,6 +363,38 @@
             <h3>Staple Gun</h3>
         </div>
 
+        <div class="product-card">
+            <img src="https://5.imimg.com/data5/SELLER/Default/2024/9/448751737/TG/KE/CO/21258075/gi-hex-nut-500x500.jpg">
+            <h3>GI Nut</h3>
+        </div>
+
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/61x77cQtIBL.jpg">
+            <h3>GI Bolt</h3>
+        </div>
+
+        <div class="product-card">
+            <img src="https://lktuae.com/wp-content/uploads/2021/02/54.png">
+            <h3>GI Hex Bolt</h3>
+        </div>
+
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/313gOjY+7VL._AC_UF1000,1000_QL80_.jpg">
+            <h3>Anger Bolt</h3>
+        </div>
+
+        <div class="product-card">
+            <img src="https://5.imimg.com/data5/SELLER/Default/2023/3/296964386/IZ/VS/QK/55524332/concrete-niles.jpg">
+            <h3>Steel Concrete Niles</h3>
+        </div>
+
+        <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgyFmfBIBfAsv8ueH5ByYIcuLH_XutS74MQfLQtIRfBA&s=10">
+            <h3>Concrete Niles</h3>
+        </div>
+
+
+
 
     </div>
 
@@ -384,7 +432,7 @@ id="cutting-grinding-discs">
 
         <!-- 02 -->
         <div class="product-card">
-            <img src="https://tiimg.tistatic.com/fp/1/007/310/bosch-stainless-steel-4-inch-circular-metal-cutting-wheel-354.jpg">
+            <img src="https://5.imimg.com/data5/PQ/QM/MY-3037138/inox-cutting-wheel.jpg">
             <h3>Cutting Disc - Stainless Steel</h3>
         </div>
 
@@ -444,7 +492,7 @@ id="cutting-grinding-discs">
 
         <!-- 12 -->
         <div class="product-card">
-            <img src="https://cpimg.tistatic.com/11356438/b/4/Sintered-Multi-Layer-Disc..jpg">
+            <img src="https://5.imimg.com/data5/SELLER/Default/2022/5/BH/ZY/BH/6149867/ss-flexi-picture-500x500.jpeg">
             <h3>Grinding Disc - Stainless Steel</h3>
         </div>
 
@@ -719,26 +767,93 @@ id="cutting-grinding-discs">
 
 <script>
 
+/* =========================================
+   MOBILE NAVIGATION MENU
+========================================= */
+
 function toggleMenu() {
 
-    const menu = document.getElementById("navMenu");
+    const navMenu = document.getElementById("navMenu");
+    const menuBtn = document.querySelector(".menu-btn");
 
-    menu.classList.toggle("active");
+    navMenu.classList.toggle("active");
+
+    /* Change hamburger icon */
+    if (navMenu.classList.contains("active")) {
+
+        menuBtn.innerHTML = "✕";
+
+    } else {
+
+        menuBtn.innerHTML = "☰";
+
+    }
 
 }
 
 
-/* Close mobile menu after clicking */
+/* =========================================
+   CLOSE MENU WHEN CLICKING NAV LINK
+========================================= */
 
-document.querySelectorAll("#navMenu a").forEach(link => {
+const navLinks = document.querySelectorAll("#navMenu a");
 
-    link.addEventListener("click", () => {
+navLinks.forEach(function(link) {
 
-        document
-            .getElementById("navMenu")
-            .classList.remove("active");
+    link.addEventListener("click", function() {
+
+        const navMenu = document.getElementById("navMenu");
+        const menuBtn = document.querySelector(".menu-btn");
+
+        navMenu.classList.remove("active");
+
+        menuBtn.innerHTML = "☰";
 
     });
+
+});
+
+
+/* =========================================
+   CLOSE MENU WHEN CLICKING OUTSIDE
+========================================= */
+
+document.addEventListener("click", function(event) {
+
+    const navMenu = document.getElementById("navMenu");
+    const menuBtn = document.querySelector(".menu-btn");
+
+    if (
+        navMenu.classList.contains("active") &&
+        !navMenu.contains(event.target) &&
+        !menuBtn.contains(event.target)
+    ) {
+
+        navMenu.classList.remove("active");
+
+        menuBtn.innerHTML = "☰";
+
+    }
+
+});
+
+
+/* =========================================
+   CLOSE MENU WHEN SCREEN BECOMES DESKTOP
+========================================= */
+
+window.addEventListener("resize", function() {
+
+    const navMenu = document.getElementById("navMenu");
+    const menuBtn = document.querySelector(".menu-btn");
+
+    if (window.innerWidth > 600) {
+
+        navMenu.classList.remove("active");
+
+        menuBtn.innerHTML = "☰";
+
+    }
 
 });
 
