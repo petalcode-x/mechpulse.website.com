@@ -174,6 +174,84 @@ body {
     color: #111;
 }
 
+/* =========================================
+   SALES EXECUTIVE CONTACT - HOME
+========================================= */
+
+.sales-contact {
+    margin: 25px auto 28px;
+
+    padding: 16px 22px;
+
+    width: fit-content;
+
+    min-width: 320px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(214, 168, 79, 0.45);
+
+    border-radius: 10px;
+
+    backdrop-filter: blur(8px);
+
+    -webkit-backdrop-filter: blur(8px);
+
+    text-align: center;
+}
+
+
+/* Sales Executive Title */
+
+.sales-title {
+    display: block;
+
+    color: #d6a84f;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+}
+
+
+/* Phone Numbers */
+
+.sales-numbers {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+}
+
+
+.sales-numbers a {
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    transition: 0.3s ease;
+}
+
+
+.sales-numbers a:hover {
+    color: #d6a84f;
+
+    transform: translateY(-2px);
+}
+
 
 /* =========================================
    ALL PRODUCT SECTIONS
@@ -258,22 +336,31 @@ body {
    SECTION TOP DECORATION
 ========================================= */
 
+.product-section {
+    position: relative;
+
+    padding: 100px 6%;
+
+    background: #f4f4f1;
+}
+
 .product-section::before {
     content: "";
 
     position: absolute;
 
     top: 0;
-    left: 6%;
+    left: 50%;
 
     width: 90px;
     height: 4px;
 
-    background: #d6a84f;
+    background: #dd9b20;
 
     border-radius: 0 0 5px 5px;
-}
 
+    transform: translateX(-50%);
+}
 
 /* =========================================
    SECTION HEADING
@@ -614,147 +701,134 @@ body {
 ========================================= */
 
 /* =========================================
-   MOBILE VIEW
+   MOBILE NAVBAR
 ========================================= */
 
 @media (max-width: 600px) {
 
-    .product-section {
-        padding: 75px 10px;
-    }
+    .header {
+        height: 65px;
 
-    .section-heading {
-        margin-bottom: 30px;
-    }
-
-    .section-heading h2 {
-        font-size: 30px;
-    }
-
-    .section-heading p {
-        font-size: 13px;
-        padding: 0 8px;
-    }
-
-
-    /* =====================================
-       PRODUCT GRID
-    ===================================== */
-
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-
-        gap: 10px;
-
-        width: 100%;
-    }
-
-
-    /* =====================================
-       PRODUCT CARD
-    ===================================== */
-
-    .product-card {
-        width: 100%;
-
-        border-radius: 12px;
-
-        box-shadow:
-            0 6px 18px rgba(0, 0, 0, 0.08);
-    }
-
-
-    /* =====================================
-       BIGGER PRODUCT IMAGE
-    ===================================== */
-
-    .product-card img {
-        width: 100%;
-
-        height: 185px;
-
-        object-fit: cover;
-    }
-
-
-    /* =====================================
-       PRODUCT NAME
-    ===================================== */
-
-    .product-card h3 {
-        min-height: 58px;
-
-        padding: 13px 5px;
-
-        font-size: 13px;
-
-        line-height: 1.35;
+        padding: 0 18px;
 
         display: flex;
 
         align-items: center;
 
+        justify-content: space-between;
+    }
+
+
+    /* LOGO */
+
+    .logo {
+        font-size: 17px;
+
+        line-height: 1.1;
+    }
+
+    .logo span {
+        font-size: 7px;
+
+        letter-spacing: 2px;
+    }
+
+
+    /* =====================================
+       THREE LINE MENU BUTTON
+    ===================================== */
+
+    .menu-btn {
+        display: flex;
+
+        align-items: center;
         justify-content: center;
 
-        text-align: center;
+        width: 42px;
+        height: 42px;
+
+        border: none;
+
+        background: transparent;
+
+        color: #ffffff;
+
+        font-size: 30px;
+
+        line-height: 1;
+
+        cursor: pointer;
+
+        padding: 0;
     }
 
 
     /* =====================================
-       HOVER / TOUCH EFFECT
+       MOBILE NAVIGATION
     ===================================== */
 
-    .product-card:hover {
-        transform: translateY(-5px);
+    .header nav {
+
+        position: absolute;
+
+        top: 65px;
+
+        left: 0;
+
+        width: 100%;
+
+        display: none;
+
+        flex-direction: column;
+
+        gap: 0;
+
+        background: rgba(15, 18, 17, 0.98);
+
+        backdrop-filter: blur(15px);
 
         box-shadow:
-            0 12px 25px rgba(0, 0, 0, 0.12);
-    }
-
-    .product-card:hover img {
-        transform: scale(1.04);
+            0 10px 25px rgba(0, 0, 0, 0.2);
     }
 
 
-    /* =====================================
-       SINGLE PRODUCT
-    ===================================== */
+    /* SHOW MENU */
 
-    .single-product {
-        width: 96%;
-    }
-
-    .single-product .product-card img {
-        height: 250px;
+    .header nav.active {
+        display: flex;
     }
 
 
-    /* =====================================
-       CONTACT
-    ===================================== */
+    /* NAV LINKS */
 
-    .contact {
-        min-height: 70vh;
+    .header nav a {
 
-        padding: 70px 20px;
+        width: 100%;
+
+        padding: 16px 22px;
+
+        color: white;
+
+        text-decoration: none;
+
+        font-size: 13px;
+
+        font-weight: 500;
+
+        border-bottom:
+            1px solid rgba(255, 255, 255, 0.08);
+
+        transition: 0.3s;
     }
 
-    .contact-content h2 {
-        font-size: 42px;
-    }
 
-    .contact-content p {
-        font-size: 14px;
-    }
+    .header nav a:hover {
 
-    .contact-buttons {
-        gap: 10px;
-    }
+        background: rgba(214, 168, 79, 0.12);
 
-    .contact-buttons a {
-        width: 140px;
+        color: #d6a84f;
 
-        padding: 13px 10px;
+        padding-left: 28px;
     }
 }
 
